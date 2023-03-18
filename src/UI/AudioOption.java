@@ -19,12 +19,14 @@ public class AudioOption {
         createVolumeButton();
     }
 
+    // nút kéo thả âm lượng
     private void createVolumeButton() {
         int vX = (int) (309 * Game.SCALE);
         int vY = (int) (278 * Game.SCALE);
         volumeButton = new VolumeButton(vX, vY, SLIDER_WIDTH, VOLUME_HEIGHT);
     }
 
+    // bật tắt âm thanh và hiệu ứng
     private void createSoundButtons() {
         int soundX = (int) (450 * Game.SCALE);
         int musicY = (int) (140 * Game.SCALE);
@@ -45,9 +47,10 @@ public class AudioOption {
         volumeButton.draw(g);
     }
 
+    // kéo thả nút âm lượng
     public void mouseDragged(MouseEvent e){
         if (volumeButton.isMousePressed()) {
-            float valueBefore = volumeButton.getFloatValue();
+            float valueBefore = volumeButton.getFloatValue(); // xem class VoulumeButton
             volumeButton.changeX(e.getX());
             float valueAfter = volumeButton.getFloatValue();
             if(valueBefore != valueAfter)
@@ -55,6 +58,8 @@ public class AudioOption {
         }
     }
 
+
+    //setMousePressed, setMouseOver xem class SoundButton
     public void mousePressed(MouseEvent e) {
         if (isIn(e, musicButton)){
             musicButton.setMousePressed(true);
@@ -68,13 +73,13 @@ public class AudioOption {
     public void mouseReleased(MouseEvent e) {
         if (isIn(e, musicButton)) {
             if (musicButton.isMousePressed()) {
-                musicButton.setMuted(!musicButton.isMuted());
-                game.getAudioPlayer().toggleSongMute();
+                musicButton.setMuted(!musicButton.isMuted());// setMuted xem class SoundButton
+                game.getAudioPlayer().toggleSongMute(); // toggleSongMute xem class AudioPlayer
             }
         } else if (isIn(e, sfxButton)) {
             if (sfxButton.isMousePressed()) {
                 sfxButton.setMuted(!sfxButton.isMuted());
-                game.getAudioPlayer().toggleEffectMute();
+                game.getAudioPlayer().toggleEffectMute(); // toggleEffectMute xem class AudioPlayer
             }
         }
         musicButton.resetBools();

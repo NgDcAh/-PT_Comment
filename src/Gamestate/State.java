@@ -14,8 +14,11 @@ public class State {
     public Game getGame() {
         return game;
     }
+
+    // kiểm tra chuột có ở vị trí nút( nút ở menu) ko
     public boolean isIn (MouseEvent e, MenuButton mb) {
-        return mb.getBounds().contains(e.getX(), e.getY());
+        return mb.getBounds().contains(e.getX(), e.getY()); // getBound() tạo 1 vùng bao quanh menubutton (xem class MenuButton)
+                                                            // contain() trả về true nếu chuột ở trong vùng bao quanh
     }
 
     public void setGameState(GameState state) {

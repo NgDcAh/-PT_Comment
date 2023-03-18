@@ -32,7 +32,7 @@ public class LevelCompletedOverLay {
     }
 
     private void initImg() {
-        img = LoadSave.GetSpriteAtlas(LoadSave.COMPELED_IMG);
+        img = LoadSave.GetSpriteAtlas(LoadSave.COMPELED_IMG); // ảnh khung complete level
         bgW = (int) (img.getWidth() * Game.SCALE);
         bgH = (int) (img.getHeight() * Game.SCALE);
         bgX = Game.GAME_WIDTH / 2 - bgW / 2;
@@ -45,7 +45,9 @@ public class LevelCompletedOverLay {
     }
 
     public void draw(Graphics g) {
+        // hiển thị khung
         g.drawImage(img, bgX, bgY, bgW, bgH, null);
+        // hiển th nút
         next.draw(g);
         menu.draw(g);
     }

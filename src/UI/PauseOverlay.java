@@ -36,7 +36,7 @@ public class PauseOverlay {
     }
 
     private void loadBackground() {
-        backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PAUSE_BACKGROUND);
+        backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PAUSE_BACKGROUND); // ảnh khung pause game
         bgWidth = (int) (backgroundImg.getWidth() * Game.SCALE);
         bgHeight = (int) (backgroundImg.getHeight() * Game.SCALE);
         bgX = Game.GAME_WIDTH / 2 - bgWidth / 2;
@@ -52,9 +52,9 @@ public class PauseOverlay {
     }
 
     public void draw(Graphics g) {
-        //background
+        // hiển thị khung
         g.drawImage(backgroundImg, bgX, bgY, bgWidth, bgHeight, null);
-
+        // hiển thị nút
         menuB.draw(g);
         replayB.draw(g);
         unpauseB.draw(g);

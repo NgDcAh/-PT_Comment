@@ -26,15 +26,17 @@ public class VolumeButton extends PauseButtons{
     }
 
     private void loadImg() {
+        // lấy ảnh nút
         BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.VOLUME_BUTTONS);
         img = new BufferedImage[3];
         for (int i = 0; i < img.length; i++)
             img[i] = temp.getSubimage(i * VOLUME_DEFAULT_WIDTH, 0, VOLUME_DEFAULT_WIDTH, VOLUME_DEFAULT_HEIGHT);
-
+        // lấy ảnh đường kẻ
         slider = temp.getSubimage(3 * VOLUME_DEFAULT_WIDTH, 0, SLIDER_DEFAULT_WIDTH, VOLUME_DEFAULT_HEIGHT);
 
     }
 
+    // xem MenuButton
     public void update() {
         index = 0;
         if (mouseOver)
@@ -63,6 +65,7 @@ public class VolumeButton extends PauseButtons{
 
     }
 
+    // % vị trí nút trên đường kẻ
     private void updateFloatValue() {
         float range = maxX - minX;
         float value = buttonX - minX;

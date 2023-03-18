@@ -33,7 +33,7 @@ public class GameOverOverlay {
     }
 
     private void createImg() {
-        img = LoadSave.GetSpriteAtlas(LoadSave.DEATH_SCREEN);
+        img = LoadSave.GetSpriteAtlas(LoadSave.DEATH_SCREEN); // ảnh khung gameover
         imgY = (int) (100 * Game.SCALE);
         imgW = (int) (img.getWidth() * Game.SCALE);
         imgX = Game.GAME_WIDTH / 2 - imgW / 2;
@@ -41,10 +41,12 @@ public class GameOverOverlay {
     }
 
     public void draw(Graphics g) {
+        // tạo lớp phủ màn hình gameover
         g.setColor(new Color(0, 0, 0, 200));
         g.fillRect(0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT);
-
+        // hiển thị khung gameover
         g.drawImage(img, imgX, imgY, imgW, imgH, null);
+        // hiển thị 2 cái nút
         menu.draw(g);
         play.draw(g);
     }

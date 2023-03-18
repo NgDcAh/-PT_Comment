@@ -16,6 +16,7 @@ public class UrmButtons extends PauseButtons{
         loadImg();
     }
 
+    // xem MenuButton
     private void loadImg() {
         BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.URM_BUTTONS);
         img = new BufferedImage[3];
@@ -24,6 +25,7 @@ public class UrmButtons extends PauseButtons{
         }
     }
 
+    // xem MenuButton
     public void update() {
         index = 0;
         if (mouseOver) {

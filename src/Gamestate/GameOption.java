@@ -33,11 +33,11 @@ public class GameOption extends State implements StateMethod {
     }
 
     private void loadImgs() {
-        backgroudImg = LoadSave.GetSpriteAtlas(LoadSave.BACKGROUND_IMG);
-        optionBackgroundImg = LoadSave.GetSpriteAtlas(LoadSave.OPTION_BACKGROUND);
+        backgroudImg = LoadSave.GetSpriteAtlas(LoadSave.BACKGROUND_IMG);// ảnh nền
+        optionBackgroundImg = LoadSave.GetSpriteAtlas(LoadSave.OPTION_BACKGROUND);// ảnh khung option
         bgW = (int) (optionBackgroundImg.getWidth() * Game.SCALE);
         bgH = (int) (optionBackgroundImg.getHeight() * Game.SCALE);
-        bgX = Game.GAME_WIDTH / 2 - bgW / 2;
+        bgX = Game.GAME_WIDTH / 2 - bgW / 2;// căn khung chính giữa màn hình
         bgY = (int) (33 * Game.SCALE);
     }
 
@@ -67,9 +67,9 @@ public class GameOption extends State implements StateMethod {
     @Override
     public void mousePressed(MouseEvent e) {
         if (isIn(e, menuB)) {
-            menuB.setMousePressed(true);
+            menuB.setMousePressed(true); // xem class UrmButtons
         } else
-            audioOption.mousePressed(e);
+            audioOption.mousePressed(e); // xem class AudioOptions
     }
 
     @Override
@@ -85,7 +85,7 @@ public class GameOption extends State implements StateMethod {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        menuB.setMouseOver(false);
+        menuB.setMouseOver(false); // xem class UrmButtons
 
         if (isIn(e, menuB))
             menuB.setMouseOver(true);

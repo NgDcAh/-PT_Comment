@@ -161,30 +161,37 @@ public class Playing extends State implements StateMethod{
         objectManager.resetAllObjects();
     }
 
+    // set sự kiện game over
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
     }
 
+    // set maxLvlOffsetX
     public void setMaxLvlOffset(int lvlOffset) {
         this.maxLvlOffsetX = lvlOffset;
     }
 
+    // đánh quái
     public void checkEnemyHit(Rectangle2D.Float attackBox) {
-        enemyManager.checkEnemyHit(attackBox);
+        enemyManager.checkEnemyHit(attackBox); // trừ hp quái
     }
 
+    // chạm vào bẫy
     public void checkSpikeTouched(Player player) {
         objectManager.checkSpikeTouched(player);
     }
 
+    // đánh vào thùng
     public void checkObjectHit(Rectangle2D.Float attackBox) {
-        objectManager.checkObjectHit(attackBox);
+        objectManager.checkObjectHit(attackBox); // set sự kiện thùng bị đánh
     }
 
+    // ăn thuốc
     public void checkPotionTouched(Rectangle2D.Float hitbox) {
-        objectManager.checkObjectTouched(hitbox);
+        objectManager.checkObjectTouched(hitbox); // set sự kiện ăn thuốc
     }
 
+    // chỉ khi trong trạng thái pause mới có hoạt động kéo thả chuột
     public void mouseDragged(MouseEvent e) {
         if (!gameOver) {
             if (paused) {
@@ -192,6 +199,7 @@ public class Playing extends State implements StateMethod{
             }
         }
     }
+
 
     @Override
     public void mouseClicked(MouseEvent e) {

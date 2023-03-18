@@ -15,6 +15,8 @@ public class SoundButton extends PauseButtons{
         super(x, y, width, height);
         loadSoundImg();
     }
+
+    // cái này hơi khác ko hiểu thì hỏi nhé
     private void loadSoundImg() {
         BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.SOUND_BUTTON);
         soundImg = new BufferedImage[2][3];
@@ -22,6 +24,7 @@ public class SoundButton extends PauseButtons{
             for (int i = 0; i < soundImg[j].length; i++)
                 soundImg[j][i] = temp.getSubimage(i * SOUND_SIZE_DEFAULT, j * SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT);
     }
+
 
     public void update() {
         if (muted)

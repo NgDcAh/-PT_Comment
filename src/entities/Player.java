@@ -86,7 +86,7 @@ public class Player extends Entity{
     public void update() {
         updateHealthBar();
         updatePowerBar();
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0) { // nếu hp < 0
             if (playerAction != DEAD){
                 playerAction = DEAD;
                 aniTick = 0;

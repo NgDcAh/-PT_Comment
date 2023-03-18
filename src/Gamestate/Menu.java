@@ -19,17 +19,18 @@ public class Menu extends State implements StateMethod{
         super(game);
         loadButtons();
         loadBackground();
-        mainScreenBackground = LoadSave.GetSpriteAtlas(LoadSave.BACKGROUND_IMG);
+        mainScreenBackground = LoadSave.GetSpriteAtlas(LoadSave.BACKGROUND_IMG); // ảnh nền menu
     }
 
     private void loadBackground() {
-        backgroundImage = LoadSave.GetSpriteAtlas(LoadSave.MENU_BACKGROUND);
+        backgroundImage = LoadSave.GetSpriteAtlas(LoadSave.MENU_BACKGROUND); // ảnh khung menu
         menuWidth = (int) (backgroundImage.getWidth() * Game.SCALE);
         menuHeight = (int) (backgroundImage.getHeight() * Game.SCALE);
-        menuX = Game.GAME_WIDTH / 2 - menuWidth / 2;
+        menuX = Game.GAME_WIDTH / 2 - menuWidth / 2; // căn cái khung chính giữa màn hình
         menuY = (int) (45 * Game.SCALE);
     }
 
+    // thêm nút
     private void loadButtons() {
         buttons[0] = new MenuButton(Game.GAME_WIDTH / 2, (int) (150 * Game.SCALE), 0, GameState.PLAYING);
         buttons[1] = new MenuButton(Game.GAME_WIDTH / 2, (int) (220 * Game.SCALE), 1, GameState.OPTIONS);
@@ -60,11 +61,12 @@ public class Menu extends State implements StateMethod{
     @Override
     public void mousePressed(MouseEvent e) {
         for (MenuButton mb : buttons) {
-            if (isIn(e, mb)) {
+            if (isIn(e, mb)) { // xem class State
                 mb.setMousePressed(true);
             }
         }
     }
+
 
     @Override
     public void mouseReleased(MouseEvent e) {
@@ -91,7 +93,7 @@ public class Menu extends State implements StateMethod{
     @Override
     public void mouseMoved(MouseEvent e) {
         for (MenuButton mb : buttons) {
-            mb.setMouseOver(false);
+            mb.setMouseOver(false); // xem class MenuButton
         }
         for (MenuButton mb : buttons) {
             if (isIn(e, mb)) {

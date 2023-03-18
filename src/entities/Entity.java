@@ -19,6 +19,7 @@ public abstract class Entity {
     protected void drawHitBox(Graphics g, int xLvlOffset) {
         g.drawRect((int) hitBox.x - xLvlOffset, (int) hitBox.y, (int) hitBox.width, (int) hitBox.height);
     }
+    // tạo hitbox
     protected void initHitBox(float x, float y, int width, int height) {
         hitBox = new Rectangle2D.Float(x, y, width, height);
     }
